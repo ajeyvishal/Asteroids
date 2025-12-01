@@ -16,7 +16,7 @@ class Asteroid(CircleShape):  ## inherits from circleshape
 
     def split(self):
         self.kill()
-        if self.radius < ASTEROID_MIN_RADIUS:
+        if self.radius <= ASTEROID_MIN_RADIUS:
             return
         
         log_event("asteroid_split")
@@ -28,3 +28,5 @@ class Asteroid(CircleShape):  ## inherits from circleshape
         asteroid_two = Asteroid(self.position.x, self.position.y, new_radius)
         asteroid_one.velocity = vector_one * 1.2
         asteroid_two.velocity = vector_two * 1.2
+    
+    

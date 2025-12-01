@@ -57,6 +57,10 @@ class Player(CircleShape):  ## inherits from circleshape
         new_shot = Shot(self.position.x, self.position.y, SHOT_RADIUS)
         new_shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
         
+    def draw_score(screen, score):
+        score_text = font.render(f"Score: {score}", True, (255, 255, 255))
+        screen.blit(score_text, (10, 10))
+        
 
 
 
